@@ -38,9 +38,15 @@ $    git clone https://github.com/IBM/microprofile-meeting-websockets.git
 7. Switch to the Java EE perspective.
 8. The meetings project is automatically created in the Project Explorer view.
 
-### Step 2. Deploy MongoDB Instance in Bluemix
-1. Log in to your [Bluemix Account](https://www.bluemix.net)
-2. Deploy a [Compose for MongoDB](https://console.bluemix.net/catalog/services/compose-for-mongodb) instance.
+### Step 2. Installing MongoDB
+If you completed the previous labs and installed MongoDB, make sure MongoDB is running. If you are starting fresh, make sure you install MongoDB. Depending on what platform you are on the installation instructions may be different. For this exercise you should get the community version of MongoDB from the [mongoDB download-center](https://www.mongodb.com/download-center#community).
+
+1. Once installed you can run the MongoDB database daemon using:
+```bash
+mongod -dbpath <path to database>
+```
+
+The database needs to be running for the application to work. If it is not running there will be a lot of noise in the server logs.
 
 ### Step 3. Updating the application to compile against the WebSocket API
 To start writing code, the Maven `pom.xml` needs to be updated to indicate the dependency on the WebSocket API for Java EE:
@@ -377,3 +383,6 @@ There are two ways to get the application running from within WDT:
  * The second way is to right-click the `meetings` project and select **Run As… > Run on Server** but there are a few things to note if you do this. WDT doesn’t automatically add the MicroProfile features as you would expect so you need to manually add those. Also, any changes to the configuration in `src/main/liberty/config` won’t be picked up unless you add an include.
 
 Find out more about [MicroProfile and WebSphere Liberty](https://developer.ibm.com/wasdev/docs/microprofile/).
+
+### GitHub
+Check out the final code for this project at: https://github.com/WASdev/sample.microprofile.meetingapp
