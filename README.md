@@ -9,15 +9,13 @@ Adapted from the blog post: [Writing a simple MicroProfile application: Using We
 
 ## Prerequisites
  * Completed [Part 3: MicroProfile Meeting Application - Using Java EE Concurrency](https://github.com/IBM/microprofile-meeting-concurrency)
- * [Eclipse Java EE IDE for Web Developers](http://www.eclipse.org/downloads/)
- * IBM Websphere Application Liberty Developer Tools (WDT)
+ * [Eclipse IDE for Web Developers](http://www.eclipse.org/downloads/): Run the installer and select Eclipse IDE for Java EE developers. **Note:** these steps were tested on the 2018-09 version of Eclipse running on Linux and Liberty Developer Tools 18.0.0.3.  **Note:** If you encounter an error message like  `Could not initialize class org.codehaus.plexus.archiver.jar.JarArchiver` please see the Troubleshooting section.
+ * IBM Liberty Developer Tools (WDT)
    1. Start Eclipse
    2. Launch the Eclipse Marketplace: **Help** -> **Eclipse Marketplace**
-   3. Search for **IBM Websphere Application Liberty Developer Tools**, and click **Install** with the defaults configuration selected
+   3. Search for **IBM Liberty Developer Tools**, and click **Install** with the defaults configuration selected
  * [Git](https://git-scm.com/downloads)
- * [Bluemix Account](https://www.bluemix.net)
- * [Bluemix CLI](https://clis.ng.bluemix.net/ui/home.html)
- 
+ * Install the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/index.html#overview) 
 ## Steps
 ### Step 1. Check out the source code
 
@@ -381,8 +379,6 @@ There are two ways to get the application running from within WDT:
  4. To stop the server again, run the `liberty:stop-server` build goal.
 
  * The second way is to right-click the `meetings` project and select **Run As… > Run on Server** but there are a few things to note if you do this. WDT doesn’t automatically add the MicroProfile features as you would expect so you need to manually add those. Also, any changes to the configuration in `src/main/liberty/config` won’t be picked up unless you add an include.
-
-Find out more about [MicroProfile and WebSphere Liberty](https://developer.ibm.com/wasdev/docs/microprofile/).
 
 ### GitHub
 Check out the final code for this project at: https://github.com/WASdev/sample.microprofile.meetingapp
